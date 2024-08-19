@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body {
+  nav {
+    background-color: white;
+    position: sticky; //固定導覽頁
+    top: 0;
+    z-index: 5;
+    // box-shadow: 0 10px 6px -6px #777; //陰影
+
+    ul {
+      display: flex;
+      margin: 1rem;
+      li {
+        list-style-type: none;
+        margin: 1rem;
+
+        a {
+          color: black;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          &:hover {
+            color: rgb(255, 50, 0);
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    section.main-area {
+      // border: 2px solid red;
+      min-height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      background-color: rgba(255, 255, 255, 0.874);
+      //   background-image: url(../images/grass.jpg);
+      // opacity: 0.5;
+      div.info {
+        flex-basis: 350px; //border的寬度會進列為持，固定大小的作用??
+        // border: 2px solid blue;
+        padding: 1rem;
+
+        transition: all 0.3 ease;
+        h1 {
+          display: inline;
+          font-size: 3rem;
+        }
+        h2 {
+          display: inline;
+          font-size: 3rem;
+          &:hover {
+            font-weight: bold;
+            color: red;
+          }
+        }
+        p {
+          //   margin: 1rem;
+          font-size: 1rem;
+        }
+        a {
+          color: white;
+          text-decoration: none;
+          margin-top: 2rem;
+          display: inline-block; //讓<a>跟<p>在不同行
+          padding: 0.25rem 0.5rem;
+          background-color: rgb(255, 50, 0);
+          border-radius: 25px;
+          transition: all 0.2s ease;
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+
+      div.img-area {
+        // border: 2px solid red;
+        img {
+          flex-basis: 450px; //border的寬度會進列為持，固定大小的作用??
+          width: 100%;
+          transition: all 0.2s ease;
+          &:hover {
+            transform: scale(0.9);
+          }
+        }
+      }
+    }
+
+    section.about-me {
+      background-color: rgb(210, 255, 230);
+      padding: 3rem 0rem;
+      display: flex;
+      justify-content: center;
+      section.description {
+        width: 70%;
+        h2 {
+          font-size: 2rem;
+        }
+        .process-bar-area {
+          p {
+            // text-align: center;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+    section.resume {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+      overflow-x: hidden; //hidden把多餘的地方裁減
+      section.table {
+        // border: 2px solid red;
+        padding: 2rem;
+        flex: 5 0 500px;
+
+        table {
+          --bs-table-bg: none; //boostrap 裡設定的值會讓表格遮住 greenRect，從F12 裡的繼承SECTION下面的.TABLE
+          border-collapse: collapse; //??
+          tr {
+            border-bottom: 2px solid gray;
+            transition: all 0.2s ease;
+            &:hover {
+              background-color: rgb(184, 255, 222);
+            }
+            td {
+              padding: 1rem;
+              img:hover {
+                transform: scale(1.2);
+              }
+            }
+          }
+        }
+      }
+
+      section.picture {
+        // border: 2px solid black;
+        flex: 1 1 500px;
+        display: flex;
+        position: relative;
+        div.img-personal {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 70%;
+          }
+        }
+        div.greenRect {
+          width: 30vw;
+          height: 90vh;
+          border: 10px solid rgb(195, 255, 200);
+          position: absolute;
+          z-index: -1;
+          top: 30px;
+          left: 80px;
+        }
+        div.greenRect2 {
+          width: 50vw;
+          height: 40vh;
+          border: 10px solid rgb(195, 255, 200);
+          position: absolute;
+          z-index: -1;
+          top: 300px;
+          left: -300px;
+        }
+        div.greenRect3 {
+          width: 50vw;
+          height: 40vh;
+          border: 10px solid rgb(195, 255, 200);
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          left: -100px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    main {
+      section.about-me {
+        section.description {
+          width: 80%;
+        }
+      }
+      section.resume {
+        overflow-x: auto;
+        section.picture {
+          div.greenRect,
+          div.greenRect2,
+          div.greenRect3 {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  body {
+    nav {
+      position: static; //將固定導覽頁取消
+      ul {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

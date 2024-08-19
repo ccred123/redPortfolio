@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: gray;
+  /* 元素置中 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#myCanvas {
+  /* 遊戲邊框的顏色 */
+  border: 5px solid lightgreen;
+  /* 讓遊戲邊框在畫面正中間 */
+  position: absolute;
+  top: 60%; /*為了讓邊框與文字間隔多一點*/
+  left: 50%;
+  transform: translate(-50%, -50%); /*移動邊框位置*/
+}
+
+#myScore1 {
+  margin-top: 1rem;
+}
+/* 遊戲分數,後續用js製作 */
+#myScore1,
+#myScore2 {
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+#Start {
+  padding: 0.25rem 0.25rem;
+  background-color: yellow;
+  font-size: 1.15rem;
+  display: block;
+  margin-top: 15px;
+}

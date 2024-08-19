@@ -1,0 +1,110 @@
+/* https://codepen.io/Mark_Bowley/pen/PozwyP */
+#background-wrap {
+  position: fixed;
+  z-index: 10;
+  top: 0; /*  泡泡初始位置 */
+  left: 0; /*  泡泡初始位置 */
+  bottom: 0; /*  泡泡初始位置 */
+  right: 0; /*  泡泡初始位置 */
+  pointer-events: none; /* 讓泡泡不影響滑鼠游標點擊網頁元素 */
+}
+
+.bubble {
+  width: 200px; /* 泡泡大小 */
+  height: 200px; /* 泡泡大小 */
+  border-radius: 50%; /* 泡泡大小 */
+  position: absolute;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2),
+    inset 0 10px 30px rgba(255, 255, 255, 1); /* inset設定泡泡內層陰影顏色 */
+}
+
+/* 下到上的動畫 */
+@keyframes bottomtotop {
+  0% {
+    margin-top: 1000px;
+  }
+  100% {
+    margin-bottom: -100%;
+  }
+}
+
+/* 左到右的動畫 */
+@keyframes lefttoright {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 50px;
+  }
+}
+
+.x1 {
+  animation: bottomtotop 20s linear infinite,
+    lefttoright 2s ease-in-out infinite alternate;
+  left: -5%; /*x1泡泡初始位置*/
+  top: 5%;
+  transform: scale(0.6); /*x1泡泡大小*/
+}
+.x2 {
+  animation: bottomtotop 20s linear infinite,
+    lefttoright 4s ease-in-out infinite alternate;
+  left: 5%;
+  top: 80%;
+  transform: scale(0.4);
+}
+.x3 {
+  animation: bottomtotop 28s linear infinite,
+    lefttoright 2s ease-in-out infinite alternate;
+  left: 10%;
+  top: 40%;
+  transform: scale(0.7);
+}
+.x4 {
+  animation: bottomtotop 22s linear infinite,
+    lefttoright 3s ease-in-out infinite alternate;
+  left: 20%;
+  top: 0%;
+  transform: scale(0.3);
+}
+.x5 {
+  animation: bottomtotop 29s linear infinite,
+    lefttoright 4s ease-in-out infinite alternate;
+  left: 30%;
+  top: 50%;
+  transform: scale(0.5);
+}
+.x6 {
+  animation: bottomtotop 21s linear infinite,
+    lefttoright 2s ease-in-out infinite alternate;
+  left: 50%;
+  top: 0%;
+  transform: scale(0.8);
+}
+.x7 {
+  animation: bottomtotop 20s linear infinite,
+    lefttoright 2s ease-in-out infinite alternate;
+  left: 65%;
+  top: 70%;
+  transform: scale(0.4);
+}
+.x8 {
+  animation: bottomtotop 22s linear infinite,
+    lefttoright 3s ease-in-out infinite alternate;
+  left: 80%;
+  top: 10%;
+  transform: scale(0.3);
+}
+.x9 {
+  animation: bottomtotop 29s linear infinite,
+    lefttoright 4s ease-in-out infinite alternate;
+  left: 90%;
+  top: 50%;
+  transform: scale(0.6);
+}
+.x10 {
+  animation: bottomtotop 26s linear infinite,
+    lefttoright 2s ease-in-out infinite alternate;
+  left: 80%;
+  top: 80%;
+  transform: scale(0.3);
+}
